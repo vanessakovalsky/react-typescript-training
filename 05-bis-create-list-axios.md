@@ -49,7 +49,9 @@ export const GameList = () => {
 ## Récupération des données via l'API
 
 * Nous allons utiliser axios :
-``` npm install axios
+``` 
+npm install react-axios
+```
 * Puis nous créons un fichier http-common.ts dans src qui contient les paramètres par défaut d'appel à notre API : 
 ```typescript
 import axios from "axios";
