@@ -224,3 +224,8 @@ validationSchema={Yup.object().shape({
 
 * On a alors un formulaire fonctionnel qui vérifie les saisies et récupère bien les données
 * Ajouter la validation sur les 3 autres champs
+
+## Pour aller plus loin
+* Ajouter l'appel POST sur le formulaire sur la soumission du formulaire
+* Dans la liste des jeux, ajouter un bouton de modification pour arriver sur le formulaire avec les bonnes données
+ 
