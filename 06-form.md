@@ -219,9 +219,10 @@ validationSchema={Yup.object().shape({
                         ? true
                         : false
                 }
+                onChange={handleChange}
+                onBlur={handleBlur}
 ...
 ```
-
 * On a alors un formulaire fonctionnel qui vérifie les saisies et récupère bien les données
 * Ajouter la validation sur les 3 autres champs
 

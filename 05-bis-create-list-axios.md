@@ -50,6 +50,8 @@ export const GameList = () => {
 
 * Nous allons utiliser axios :
 ``` 
+npm install axios
+npm install prop-types
 npm install react-axios
 ```
 * Puis nous créons un fichier http-common.ts dans src qui contient les paramètres par défaut d'appel à notre API : 
