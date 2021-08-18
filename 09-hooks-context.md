@@ -165,13 +165,13 @@ export const GameList = () => {
       return (
         <div>
             <button
-                onClick={() => dispatch(addGame)}
+                onClick={() => dispatch({type: 'ADD_GAME', game: values})}
             >Ajouter un jeu</button>
             {state.games.map((game: IGame) =>(
                 <div>
                     <GameItem game={game} key={game.id} />
                     <button
-                        onClick={() => dispatch(removeGame)}
+                        onClick={() => dispatch({type: 'REMOVE_GAME', game: values})}
                     >Supprimer un jeu</button>
                 </div>
             ))}
