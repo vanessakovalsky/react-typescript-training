@@ -62,28 +62,7 @@ export default GameList
 ```
 * Ici on utilise le useReducer et le dispatch pour déclencher les actions.
 * Le reducer s'appuie sur ce qui avait été fait pour Redux ainsi que les actions types (aucune modification n'a été effectuée dans ces fichiers)
-* Les actions sont devenues des constantes et plus des fonctions afin de coller au mode de fonctionnement du hook
-```typescript 
-import * as actionTypes from "./actionTypes"
-
-const initGame: IGame = {
-  id: 14,
-  nomDuJeu: 'Jeu du hook',
-  editeur: 'Editeur',
-  anneeDeSortie: 2007,
-  categorie: 'Expert'
-}
-
-export const addGame: GameAction = {
-    type: actionTypes.ADD_GAME,
-    game: initGame
-}
-
-export const removeGame: GameAction = {
-    type: actionTypes.REMOVE_GAME,
-    game: initGame
-}
-```
+* Les actionsCreators ne sont plus utilisées pour le context. 
 * Nous allons maintenant ajouter le contexte qui permet de conserver l'état à un niveau plus haut (comme le store de redux)
 * Pour cela nous créons un fichier context.tsx à la racine de src qui va contenir notre contexte : 
 ```typescript
@@ -206,7 +185,6 @@ export default GameList
 
 * Notre application est prête à être utiliser. La variable state est dispo dans tous les composants enfants de App
 
-## Remplacer react router par des hooks
+## Pour aller plus loin :  react router par des hooks
 
-[TODO : rédiger les consignes en se basant sur cet article]
 https://blog.logrocket.com/how-react-hooks-can-replace-react-router/
