@@ -10,57 +10,6 @@ Cet exercice a pour objectifs :
 * Pourquoi ? Les hooks et l'API Context permettent de gérer les états de votre application de la même façon que Redux au travers du contexte et des hooks useState et  useReducer notamment. 
 * Cependant Redux garde un avantage et doit être envisagé comme option sur les applications avec de nombreuses fonctionnalités qui partagent les données entre elle. Ce n'est pas le cas de notre application d'exemple.
 * Nous avons déjà utilisé les hooks useState lors de la définition des données avant d'utiliser Redux, nous allons réutiliser ce hook et nous allons utiliser en complément car nous manipulons des données complexe le hook useReducer qui nous permet notamment de gérer des dispatch.
-* Un exemple avec nos jeux dans le composant gameList qui est devenu :
-```typescript 
-import React, { useReducer, useState } from 'react';
-import { Link } from 'react-router-dom';
-
-import GameItem from './gameItem';
-
-import reducer from '../store/reducers';
-import { addGame, removeGame } from '../store/actionCreators';
-
-export const GameList = () => {
-        const initState = {
-            games: [
-              {
-                id: 1,
-                nomDuJeu: "Les aventuriers du rail", 
-                editeur: "Days of wonders", 
-                anneeDeSortie: 2004 , 
-                categorie: "Familiale"
-              },
-              {
-                id: 2,
-                nomDuJeu: "7 wonders", 
-                editeur: "Repos production", 
-                anneeDeSortie: 2010 , 
-                categorie: "Familiale" 
-              },
-            ],
-        }
-        const [games2, dispatch] = useReducer(reducer, initState );
-
-      return (
-        <div>
-            <button
-                onClick={() => dispatch({type: 'ADD_GAME', game: values})}
-            >Ajouter un jeu</button>
-            {games2.games.map((game: IGame) =>(
-                <div>
-                    <GameItem game={game} key={game.id} />
-                    <button
-                        onClick={() => dispatch({type: 'REMOVE_GAME', game: values})}
-                    >Supprimer un jeu</button>
-                </div>
-            ))}
-        </div>
-      )
-}
-
-export default GameList
-```
-* Ici on utilise le useReducer et le dispatch pour déclencher les actions.
 * Le reducer s'appuie sur ce qui avait été fait pour Redux ainsi que les actions types (aucune modification n'a été effectuée dans ces fichiers)
 * Les actionsCreators ne sont plus utilisées pour le context. 
 * Nous allons maintenant ajouter le contexte qui permet de conserver l'état à un niveau plus haut (comme le store de redux)
@@ -161,11 +110,17 @@ import { AppContext } from './../context';
 export const GameList = () => {
 
         const { state, dispatch } = useContext(AppContext);
-
+        const newGame : IGame = { 
+            id: Math.random(),
+            nomDuJeu: "Nom du jeu", 
+            editeur: "Asmodée", 
+            anneeDeSortie: "2004" , 
+            categorie: "Familiale" 
+          }
       return (
         <div>
             <button
-                onClick={() => dispatch({type: 'ADD_GAME', game: values})}
+                onClick={() => dispatch({type: 'ADD_GAME', game: newGame})}
             >Ajouter un jeu</button>
             {state.games.map((game: IGame) =>(
                 <div>
