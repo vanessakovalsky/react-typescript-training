@@ -52,7 +52,7 @@ export const GameList = () => {
 ``` 
 npm install axios
 npm install prop-types
-npm install react-axios
+npm install react-axios --legacy-peer-deps
 ```
 * Puis nous créons un fichier http-common.ts dans src qui contient les paramètres par défaut d'appel à notre API : 
 ```typescript
