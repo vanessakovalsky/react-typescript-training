@@ -8,7 +8,7 @@ Cet exercice a pour objectifs :
 ## Créer un menu avec des routes
 * Nous utilisons react-router qu'il faut commencer par installer :
 ```
-
+npm install react-router-dom localforage match-sorter sort-by
 ```
 * Commençons par créer un dossier pages dans src
 * Puis créons deux pages : 
