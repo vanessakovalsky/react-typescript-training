@@ -61,3 +61,10 @@ export default App;
 * Ajouter une page pour afficher un jeu spécifique à l'aide du composant Game
 * Ajouter dans la liste des jeux un lien vers la page correspondante à l'ID
 
+## Pour aller plus loin :
+
+* Voir le tutoriel de react router qui permet notamment :
+  * De définir un composant Root racine contenant toutes les routes dans un fichier propre
+  * De gérer les pages non trouvées (404)
+  * Et bien d'autres choses
+  https://reactrouter.com/en/main/start/tutorial 
