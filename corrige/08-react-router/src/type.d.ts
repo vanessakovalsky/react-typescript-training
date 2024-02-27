@@ -1,9 +1,9 @@
 interface IGame {
     id: number
-    gameName : string;
-    editorName : string;
-    gameYear: number;
-    category: string;
+    nomDuJeu : string;
+    editeur : string;
+    anneeDeSortie: number;
+    categorie: string;
   }
   
   type GameState = {
@@ -16,4 +16,3 @@ interface IGame {
   }
   
   type DispatchType = (args: GameAction) => GameAction
-  

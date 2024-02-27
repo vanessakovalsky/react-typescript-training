@@ -1,26 +1,50 @@
-import * as React from 'react';
+import React from 'react';
+import { useSelector, shallowEqual, useDispatch } from "react-redux"
+import { Dispatch } from 'redux';
 import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import { Home }   from './pages/home'
-import { AddGame }  from './pages/addGame';
-import { ListGame } from './pages/listGame';
-import { ShowGame } from './pages/showGame';
+import {GameComponent} from './components/GameComponent';
+import HeaderComponent from './components/HeaderComponent';
+import LoginComponent from './components/LoginComponent';
+import GameAddComponent from './components/GameAddComponent';
+import GameListComponent from './components/GameListComponent';
+import Reservation from './DemoForm';
+import GameForm from './components/GameForm';
+import { TestFormComponent } from './components/TestFormComponent';
+import DemoMaterial from './components/DemoMaterial';
+import { addGame, removeGame } from './store/actionCreators';
+import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 
-const App = () =>  {
+function App() {
+  const games: readonly IGame[] = useSelector(
+    (state: GameState) => state.games,
+    shallowEqual
+  )
+
+  const dispatch: Dispatch<any> = useDispatch()
+
+  const saveGame = React.useCallback(
+    (game: IGame) => dispatch(addGame(game)),
+    [dispatch]
+  )
+
   return (
     <div className="App">
-     <Router>
+      <HeaderComponent logo = {logo} />
+      <Router>
         <nav>
-          <Link to="/home">Home</Link>
-          <Link to="/addGame">Add Game</Link>
-          <Link to="/listGame">List Games</Link>
+          <Link to="/">Accueil</Link>
+          <Link to="/liste">Liste des jeux</Link>
+          <Link to="/ajout">Ajouter un jeu</Link>
+          <Link to="/game/42">Voir le jeu 42</Link>
         </nav>
-         <Route path="/home" component={Home} />
-         <Route path="/addGame" component={AddGame} />
-         <Route path="/listGame" component={ListGame} />
-         <Route path="/game/:id" component={ShowGame} />
-     </Router>
+        <Routes>
+          <Route path="/" element={<GameListComponent />} />
+          <Route path="/liste" element={<GameListComponent />} />  
+          <Route path="/ajout" element={<GameForm />} />
+          <Route path="/game/:id" element={<GameComponent />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
