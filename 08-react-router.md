@@ -32,8 +32,10 @@ const App = () =>  {
           <Link to="/home">Home</Link>
           <Link to="/addGame">Add Game</Link>
         </nav>
-         <Route path="/home" component={Home} />
-         <Route path="/addGame" component={AddGame} />
+         <Routes>
+            <Route path="/home" element={<Home />} />
+            <Route path="/addGame" element={<AddGame />} />
+         </Routes>
      </Router>
     </div>
   );
@@ -52,7 +54,7 @@ export default App;
 
 * Pour ajouter un paramètre d'URL, il est nécessaire de l'ajouter au niveau de la route avec la syntaxe :nomduparametre
 ```typescript
-<Route path="/game/:id" component={Game} />
+<Route path="/game/:id" element={<Game />} />
 ```
 * et de rajouter le paramètre au niveau du lien également :
 ```typescript
