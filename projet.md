@@ -6,7 +6,7 @@ Vous trouverez ici quelques idées de projets court décrit en quelques lignes q
 ### Tic Tac Toe
 
 * Présentation : jeu pour deux joueurs d'une grille de 9 cases (3X3), chaque joueur va choisir une case à son tour et la remplir avec son symbole (croix ou rond), l'objectif étant d'aligner 3 croix ou trois ronds.
-* Tutoriel : https://reactrouter.com/en/main/start/tutorial
+* Tutoriel : https://reactrouter.com/en/main/start/tutorial](https://claritydev.net/blog/tic-tac-toe-typescript-react-hooks
 
 ### Panier d'achat
 
