@@ -1,12 +1,12 @@
 interface IGame {
     id: number
-    nomDuJeu: string
-    editeur: string
-    anneeDeSortie: number
-    categorie: string 
+    nomDuJeu : string;
+    editeur : string;
+    anneeDeSortie: number;
+    categorie: string;
   }
   
-  interface GameState {
+  type GameState = {
     games: IGame[]
   }
   

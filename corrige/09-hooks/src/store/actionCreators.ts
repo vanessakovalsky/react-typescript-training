@@ -1,19 +1,26 @@
 import * as actionTypes from "./actionTypes"
 
-const initGame: IGame = {
-  id: 14,
-  nomDuJeu: 'Jeu du hook',
-  editeur: 'Editeur',
-  anneeDeSortie: 2007,
-  categorie: 'Expert'
-}
-
-export const addGame: GameAction = {
+export function addGame(game: IGame) {
+  const action: GameAction = {
     type: actionTypes.ADD_GAME,
-    game: initGame
+    game,
+  }
+
+  return simulateHttpRequest(action)
 }
 
-export const removeGame: GameAction = {
+export function removeGame(game: IGame) {
+  const action: GameAction = {
     type: actionTypes.REMOVE_GAME,
-    game: initGame
+    game,
+  }
+  return simulateHttpRequest(action)
+}
+
+export function simulateHttpRequest(action: GameAction) {
+  return (dispatch: DispatchType) => {
+    setTimeout(() => {
+      dispatch(action)
+    }, 500)
+  }
 }

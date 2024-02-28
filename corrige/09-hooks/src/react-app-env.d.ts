@@ -1,5 +1,4 @@
 /// <reference types="react-scripts" />
-
 interface Game {
     id: number
     nomDuJeu: string
