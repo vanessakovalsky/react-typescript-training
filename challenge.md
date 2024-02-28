@@ -27,4 +27,7 @@
 * Il existe 200 cartes différentes (avec des noms et caracteristiques différentes).
 * Chaque joueur a à sa disposition un paquet de carte de 60 cartes parmi les 200 cartes.
 
- 
+ ## Quelques façons de le faire 
+
+ * https://www.wawasensei.dev/tuto/build-a-multiplayer-card-game-w-react-three-fiber-and-playroom-stream-mode
+ * https://github.com/LoveChase/React-TCG?tab=readme-ov-file
