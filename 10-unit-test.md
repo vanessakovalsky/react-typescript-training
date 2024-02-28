@@ -12,14 +12,14 @@ Cet exercice a pour objectifs :
 * Il n'y a pas de configuration particulière à faire, puisque create-react-app à créer pour nous les différents fichiers nécessaires à l'éxecution des tests avec Jest
 * Nous allons commencer par créer un test pour s'assurer que notre composant GameItem fonctionne.
 * Pour cela dans le dossier src, nous creons un dossier __tests__ 
-* Dans ce nouveau dossier nous créons un fichier GameItem.test.tsx
+* Dans ce nouveau dossier nous créons un fichier GameItemComponent.test.tsx
 ```typescript 
 import React from "react";
 
-import { render, fireEvent, waitForElement } from "@testing-library/react";
+import { render, fireEvent } from "@testing-library/react";
 
 
-import GameItem from "../components/gameItem";
+import GameItemComponent from "../components/GameItemComponent";
 
 
 function renderGameItem() {
@@ -28,15 +28,15 @@ function renderGameItem() {
         id: 1,
         nomDuJeu: "Les aventuriers du rail", 
         editeur: "Days of wonders", 
-        anneeDeSortie: "2004" , 
+        anneeDeSortie: 2004 , 
         categorie: "Familiale"
     };
   
-    return render(<GameItem game={game} />);
+    return render(<GameItemComponent params={game} />);
 
   }
 
-describe("<GameItem /> test", () => {
+describe("<GameItemComponent /> test", () => {
 
   test("should display a game", async () => {
     const  gameItem = renderGameItem();
@@ -52,10 +52,13 @@ describe("<GameItem /> test", () => {
     * test est la fonction qui va exécuter le test, elle prend un nom et une fonction (asynchrone la plupart du temps)
     * expect est l'assertion que l'on cherche à vérifier (il en existe de nombreuses sorte : https://jestjs.io/docs/expect )
     * la fonction render utilisée dans renderGameItem, permet de générer le rendu du composant à partir des données fictives que nous lui avons injecté.
-
+* Pour lancer vos tests :
+```
+npm test
+```
 * Vous pouvez maintenant tester l'intégralité du composant en ajoutant des assertions pour chaque donnée
 
 ## Tester le comportement
 
 * Nous allons maintenant tester que l'évènement sur la soumission du formulaire se déclenche correctement. 
-* Pour cela nous créons un fichier __tests__/
+* Pour cela nous créons un fichier __tests__/GameForm.test.tsx
