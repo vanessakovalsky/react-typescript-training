@@ -25,7 +25,7 @@ describe("<GameItemComponent /> test", () => {
   test("should display a game", async () => {
     const  gameItem = renderGameItem();
     
-    expect(gameItem.findByTitle('Nom du jeu: Les aventuriers du rail'));
+    expect(await screen.findAllByText('Nom du jeu: Les aventuriers du rail'));
   
   });
 
