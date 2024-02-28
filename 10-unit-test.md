@@ -90,8 +90,7 @@ test('rendering and submitting a basic Formik form', async () => {
         expect(mock.mock.calls[0][0].name).toBe('TestJeu');
       });
 })
-``̀`
-
+``
 * En détail :
     * on mock une fonction pour vérifier qu'elle est appelé (ici celle du onSubmit)
     * on fait le rendu du jeu
